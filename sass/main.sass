@@ -9,6 +9,14 @@
 	box-sizing: border-box
 	outline: none!important
 	text-decoration: none
+a.active
+	color: #282528!important
+.container
+	width: 1170px
+	margin: 0 auto
+	&-mini
+		width: 1170px
+		margin: 0 auto
 .header
 	background: url(../img/header-bg.jpg) no-repeat #48d7d7
 	width: 100%
@@ -60,7 +68,8 @@
 			width: 100%
 			position: absolute
 			left: 0
-			top: 100%
+			top: 105%
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22)
 			background: #fff
 			&-list
 				width: 100%
@@ -136,9 +145,10 @@
 				&:hover
 					color: #f69e00
 	&-wrap
-		width: 1170px
-		margin: 0 auto
+		//width: 1170px
+		//margin: 0 auto
 		&__content
+			position: relative
 			&-title
 				color: #ffffff
 				font-family: "Open Sans"
@@ -177,9 +187,29 @@
 					font-size: 34px
 					font-weight: 800
 					text-transform: uppercase
+			&-todown
+				display: flex
+				position: absolute
+				left: calc(50% - (30px / 2))
+				bottom: -125px
+				&:hover
+					animation: bounce-arrow
+					animation-duration: 1.4s
+					animation-iteration-count: 1
+					animation-timing-function: cubic-bezier(.32,0,.58,1)
+			&-icons
+				display: flex
+				position: absolute
+				right: 0
+				bottom: -125px
+
+				&_icon
+					margin-right: 12px
+					&:last-child
+						margin-right: 0
 .features
-	width: 1140px
-	margin: 0 auto
+	//width: 1140px
+	//margin: 0 auto
 	background: #fff
 	&-title
 		padding: 140px 0
@@ -206,21 +236,16 @@
 		display: flex
 		align-items: center
 		justify-content: space-between
-		max-height: 490px
 	&-column
-		&-center
-			margin-left: -17px
-			margin-top: 40px
-		&-left,&-right
-			align-content: space-between
-			justify-content: space-between
-			display: flex
-			flex-flow: column
-			align-self: stretch
+		align-content: space-between
+		justify-content: space-between
+		display: flex
+		flex-flow: column
+		align-self: stretch
+		flex-basis: 33.333%
 		&__item
 			display: flex
 			align-items: flex-start
-			white-space: nowrap
 			&-img
 				margin-right: 40px
 			ul
@@ -246,31 +271,30 @@
 				font-size: 13px
 				line-height: 20px
 .cta
-	width: 1140px
-	margin: 0 auto
 	background: #fff
 	padding: 70px 0 116px 0
+	&__title
+		text-align: center
+		color: #282528
+		font-family: "Open Sans"
+		font-size: 57px
+		font-weight: 800
+		line-height: 43px
+		margin-bottom: 15px
+	&__subtitle
+		text-align: center
+		font-family: "Open Sans"
+		font-size: 33px
+		font-weight: 700
+		color: #282528
+		margin-bottom: 50px
 	&-wrap
 		margin-top: 70px
-		&__title
-			text-align: center
-			color: #282528
-			font-family: "Open Sans"
-			font-size: 57px
-			font-weight: 800
-			line-height: 43px
-			margin-bottom: 15px
-		&__subtitle
-			text-align: center
-			font-family: "Open Sans"
-			font-size: 33px
-			font-weight: 700
-			color: #282528
-			margin-bottom: 50px
 		&__column
 			display: flex
 			justify-content: space-evenly
 			align-items: flex-end
+			flex-wrap: wrap
 
 
 			&-block
@@ -302,8 +326,8 @@
 	background-color: #fafafa
 	padding: 100px 0
 	&-wrap
-		width: 1140px
-		margin: 0 auto
+		//width: 1140px
+		//margin: 0 auto
 	&-title
 		color: #282528
 		font-family: "Open Sans"
@@ -346,9 +370,8 @@
 				transform: rotate(0deg)
 				background-image: url('../img/slider_next.png')
 		&__slide
-			width: 966px
-			margin: 0 auto
 			padding: 0 40px
+			margin: 0 auto
 			&-text
 				text-align: justify
 				color: #282528
@@ -390,8 +413,8 @@
 .footer
 	padding: 107px 0 70px 0
 	&-wrap
-		width: 1140px
-		margin: 0 auto
+		//width: 1140px
+		//margin: 0 auto
 		display: flex
 		justify-content: space-between
 		flex-flow: row
@@ -419,4 +442,27 @@
 				justify-content: center
 				img
 					margin-right: 20px
+.slick-dots 
+	display: flex!important
+	justify-content: center
+	margin: 0
+	padding: 1rem 0
+	list-style-type: none
+	margin-top: 33px
+	li 
+		margin: 0 0.25rem
+		button 
+			display: block
+			width: 1rem
+			height: 1rem
+			padding: 0
+			border: 2px solid transparent
+			border-radius: 100%
+			background: #282528
+			opacity: 0.2
+			text-indent: -9999px
+	& .slick-active button 
+			border: 2px solid #000
+			background-color: transparent
+			border-radius: 100%
 @import 'media'
