@@ -1,0 +1,422 @@
+
+
+@import 'fonts'
+
+@import 'keyframes'
+
+
+*
+	box-sizing: border-box
+	outline: none!important
+	text-decoration: none
+.header
+	background: url(../img/header-bg.jpg) no-repeat #48d7d7
+	width: 100%
+	height: 876px
+	background-position: 50% 100%
+	&-menu
+		width: 1240px
+		height: 93px
+		padding: 0 35px
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22)
+		background-color: #ffffff
+		position: fixed
+		top: 37px
+		left: calc(50% - (1240px/2))
+		display: flex
+		justify-content: space-between
+		align-items: center
+		transition: all .11s cubic-bezier(.42,0,.58,1)  0s
+		z-index: 100
+		&__logo
+		&__nav
+			&-list
+				margin: 0
+				padding: 0
+				display: flex
+			&-item
+				margin-right: 35px
+				
+				font-family: "Open Sans"
+				font-size: 13px
+				font-weight: 700
+				line-height: 36px
+				text-transform: uppercase
+				&:last-child
+					margin-right: 0
+				a
+					color: #969596
+					&:hover
+						color: #f69e00
+					&:focus
+						color: #282528
+		&__mobnav
+			display: none
+			text-transform: uppercase
+			text-align: center
+			font-family: "Open Sans"
+			font-weight: 700
+			font-size: 13px
+			width: 100%
+			position: absolute
+			left: 0
+			top: 100%
+			background: #fff
+			&-list
+				width: 100%
+			&-item
+				padding: 15px 0
+				a
+					color: #969596
+					&:hover
+						color: #f69e00
+					&:focus
+						color: #282528
+		&__burger
+			display: none
+			color: #000
+			font-family: "Open Sans"
+			font-weight: 700
+			&-btn
+				border: none
+				background: #fff
+				color: #000
+				font-family: "Open Sans"
+				font-weight: 700
+				position: relative
+				margin-right: 30px
+				span
+					background: #969596
+					width: 15px
+					height: 2px
+					position: absolute
+					right: -20px
+					top: 12px
+					transition: all .1s cubic-bezier(.42,0,.58,1)  0s
+					//transform: rotate(90deg)
+					&:before
+						content: ''
+						background: #969596
+						width: 10px
+						height: 2px
+						position: absolute
+						left: 0
+						top: -7px
+						transition: all .2s cubic-bezier(.42,0,.58,1)  0s
+					&:after
+						content: ''
+						background: #969596
+						width: 20px
+						height: 2px
+						position: absolute
+						left: 0
+						top: 7px
+						transition: all .2s cubic-bezier(.42,0,.58,1)  0s
+				&_active
+					span
+						background: transparent
+						&:before
+							width: 20px
+							transform: rotate(45deg)
+							top: 0
+							left: -5px
+						&:after
+							transform: rotate(-45deg)
+							top: 0
+							left: -5px
+		&__tel
+			
+			font-family: "Open Sans"
+			font-size: 23px
+			font-weight: 700
+			line-height: 36px
+			text-transform: uppercase	
+			a
+				color: #282528
+				&:hover
+					color: #f69e00
+	&-wrap
+		width: 1170px
+		margin: 0 auto
+		&__content
+			&-title
+				color: #ffffff
+				font-family: "Open Sans"
+				font-weight: 800
+				text-transform: uppercase
+				padding-top: 270px
+				span
+					display: block
+					&:nth-child(1)
+						font-size: 124px
+					&:nth-child(2)
+						font-size: 94px
+			&-subtitle
+				color: #ffffff
+				font-family: "Open Sans"
+				font-weight: 600
+				font-size: 28px
+				padding-top: 40px
+				padding-bottom: 48px
+			&-btn
+				box-shadow: 0 5px 0 #298624, inset 0 5px 5px rgba(247, 235, 151, 0.66)
+				border-radius: 50px
+				background-color: #4db848
+				border: none
+				padding: 34px 92px 20px 100px
+				background-image: linear-gradient(to bottom, #55dd49 0%, #3da139 100%)
+				&:hover
+					animation: bounce
+					animation-duration: 1.4s
+					animation-iteration-count: 1
+					animation-timing-function: cubic-bezier(.32,0,.58,1)
+				span
+					text-shadow: 1px 1px 1px #24811b
+					color: #ffffff
+					font-family: "Open Sans"
+					font-size: 34px
+					font-weight: 800
+					text-transform: uppercase
+.features
+	width: 1140px
+	margin: 0 auto
+	background: #fff
+	&-title
+		padding: 140px 0
+		text-align: center
+		color: #282528
+		font-family: "Open Sans"
+		font-size: 28px
+		font-weight: 700
+		position: relative
+		&:before,&:after
+			content: ''
+			display: block
+			position: absolute
+			width: 60px
+			height: 1px
+			background-color: #535b64
+			opacity: 0.4
+			top: 50%
+		&:before
+			left: 27%
+		&:after
+			right: 27%
+	&-wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+		max-height: 490px
+	&-column
+		&-center
+			margin-left: -17px
+			margin-top: 40px
+		&-left,&-right
+			align-content: space-between
+			justify-content: space-between
+			display: flex
+			flex-flow: column
+			align-self: stretch
+		&__item
+			display: flex
+			align-items: flex-start
+			white-space: nowrap
+			&-img
+				margin-right: 40px
+			ul
+				list-style: disc
+				padding-left: 20px
+			&-title
+				color: #282528
+				font-family: "Open Sans"
+				font-size: 22px
+				font-weight: 700
+				margin-bottom: 17px
+				line-height: 26px
+				span
+					margin-right: 40px
+			&-subtitle
+				color: #282528
+				font-family: "Open Sans"
+				font-size: 16px
+				font-weight: 400
+				line-height: 24px
+			&-hint
+				color: #a8a8a8
+				font-size: 13px
+				line-height: 20px
+.cta
+	width: 1140px
+	margin: 0 auto
+	background: #fff
+	padding: 70px 0 116px 0
+	&-wrap
+		margin-top: 70px
+		&__title
+			text-align: center
+			color: #282528
+			font-family: "Open Sans"
+			font-size: 57px
+			font-weight: 800
+			line-height: 43px
+			margin-bottom: 15px
+		&__subtitle
+			text-align: center
+			font-family: "Open Sans"
+			font-size: 33px
+			font-weight: 700
+			color: #282528
+			margin-bottom: 50px
+		&__column
+			display: flex
+			justify-content: space-evenly
+			align-items: flex-end
+
+
+			&-block
+				display: flex
+				flex-flow: column nowrap
+				position: relative
+				align-self: stretch
+				justify-content: flex-end
+				&:nth-child(2) .cta-wrap__column-block-descr
+					margin-top: 50px
+					margin-left: -20px
+				&:last-child:after
+					content: ''
+				&:after
+					content: url('../img/cta-icon.png')
+					position: absolute
+					top: 35%
+					right: -42%
+					height: 23px
+					width: 14px
+				&-descr
+					margin-top: 30px
+					font-family: "Open Sans"
+					text-align: center
+					color: #212121
+					font-weight: 600
+					font-size: 24px
+.review
+	background-color: #fafafa
+	padding: 100px 0
+	&-wrap
+		width: 1140px
+		margin: 0 auto
+	&-title
+		color: #282528
+		font-family: "Open Sans"
+		font-size: 57px
+		font-weight: 800
+		text-align: center
+		margin-bottom: 200px
+		position: relative
+		&:after
+			content: url('../img/review-icon.png')
+			position: absolute
+			left: calc(50% - (79px/2))
+			top: 115px
+	&-slider
+		&_prev
+			height: 59px
+			width: 59px
+			background-image: url('../img/slider_prev.png')
+			border: none
+			background-color: #fafafa 
+			transition: all 0.1s
+			position: absolute
+			left: -12%
+			top: 12%
+			&:hover
+				background-image: url('../img/slider_next.png')
+				transform: rotate(180deg)
+		&_next
+			height: 59px
+			width: 59px
+			background-image: url('../img/slider_prev.png')
+			transform: rotate(-180deg)
+			border: none
+			background-color: #fafafa
+			transition: all 0.1s
+			position: absolute
+			right: -12%
+			top: 12%
+			&:hover
+				transform: rotate(0deg)
+				background-image: url('../img/slider_next.png')
+		&__slide
+			width: 966px
+			margin: 0 auto
+			padding: 0 40px
+			&-text
+				text-align: justify
+				color: #282528
+				font-family: "Open Sans"
+				font-size: 18px
+				font-weight: 400
+				line-height: 36px
+				margin-bottom: 100px
+			&-block
+				text-align: center
+				&__img
+					margin-bottom: 40px
+					display: inline-block
+					img
+						border: 3px solid #4db848
+						border-radius: 50%
+				&__name
+					color: #282528
+					font-family: "Open Sans"
+					font-size: 23px
+					font-weight: 700
+					margin-bottom: 5px
+				&__descr
+					color: #646464
+					font-family: "Open Sans"
+					font-size: 17px
+					font-weight: 400
+.video 
+	position: relative
+	width: 100%
+	height: 0
+	padding-bottom: 56.25%
+	&-ytb
+		position: absolute
+	 top: 0
+	 left: 0
+	 width: 100%
+	 height: 100%
+.footer
+	padding: 107px 0 70px 0
+	&-wrap
+		width: 1140px
+		margin: 0 auto
+		display: flex
+		justify-content: space-between
+		flex-flow: row
+		align-items: center
+		&_column
+			flex-basis: 33.333333%
+			&-descr
+				color: #a2a2a2
+				font-family: "Open Sans"
+				font-size: 13px
+				font-weight: 400
+				line-height: 24px
+			&-logo
+				margin-bottom: 27px
+			&-cr
+				text-align: center
+				opacity: 0.8
+				color: #282528
+				font-family: "Open Sans"
+				font-size: 13px
+				font-weight: 400
+				line-height: 24px
+			&-icon
+				display: flex
+				justify-content: center
+				img
+					margin-right: 20px
+@import 'media'
